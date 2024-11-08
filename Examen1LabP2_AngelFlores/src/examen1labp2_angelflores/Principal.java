@@ -229,7 +229,7 @@ public class Principal extends javax.swing.JFrame {
         if (seleccionando < 0 || seleccionando > computadoras.size()) {
             seleccionando = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese de nuevo la posicion de la PC que desea ingresar:"));
         } else {
-            JOptionPane.showMessageDialog(null, "no hay ningun dato con la posicion ingresada(pueda ser que no agrego ningun usuario)");
+            JOptionPane.showMessageDialog(null, "no hay ninguno con la posicion ingresada(pueda ser que no agrego ningun usuario)");
         }
         this.setVisible(false);
         System.out.print(computadoras.get(seleccionando).getHostName() + "#");
