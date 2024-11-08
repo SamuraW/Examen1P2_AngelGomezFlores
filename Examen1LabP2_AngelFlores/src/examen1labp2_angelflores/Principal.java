@@ -248,7 +248,7 @@ public class Principal extends javax.swing.JFrame {
             this.setVisible(true);
 
         }else if (comando1.equalsIgnoreCase("show")){
-            System.out.println("Direccion Ip:"+computadoras.get(seleccionando).getDireccionIp()+"\n Mascara  de Red:"+computadoras.get(seleccionando).getMascaraDered());
+            System.out.println("Direccion de Ip:"+computadoras.get(seleccionando).getDireccionIp()+"\n Mascara  de Red:"+computadoras.get(seleccionando).getMascaraDered());
         }
         ping = entrada.next();
 
