@@ -4,6 +4,8 @@
  */
 package examen1labp2_angelflores;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -169,6 +171,18 @@ public class Principal extends javax.swing.JFrame {
     private void btn_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_agregarMouseClicked
         // TODO add your handling code here:
         direccionIp = txt_direccionIp.getText();
+        txt_direccionIp.addKeyListener(new KeyAdapter(){
+        @Override
+        public void keyTyped(KeyEvent e){
+            char cara = e.getKeyChar();
+            if (Character.isDigit(cara)) {
+                System.out.println("Es un numero");
+            }else {
+                JOptionPane.showMessageDialog(null, "Ese no es un numero");
+                e.consume();
+            }
+        }
+    
 
 //        for (int i = 0; i < direccionIp.length() ; i++) {
 //            if (direccionIp.charAt(i) == 'A' ||) {
