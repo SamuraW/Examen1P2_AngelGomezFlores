@@ -223,14 +223,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseClicked
         // TODO add your handling code here:
-        System.out.println("Cadena:");
-        String cadena = entrada.next();
+       
         recorriendo();
         int seleccionando = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posicion de la PC que desea ingresar:"));
         if (seleccionando < 0 || seleccionando > computadoras.size()) {
             seleccionando = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese de nuevo la posicion de la PC que desea ingresar:"));
         } else {
-            JOptionPane.showMessageDialog(null, "no hay ningun dato con esa posicion(pueda ser que no agrego ningun usuario)");
+            JOptionPane.showMessageDialog(null, "no hay ningun dato con la posicion ingresada(pueda ser que no agrego ningun usuario)");
         }
         this.setVisible(false);
         System.out.print(computadoras.get(seleccionando).getHostName() + "#");
@@ -248,6 +247,8 @@ public class Principal extends javax.swing.JFrame {
         } else if (comando1.equalsIgnoreCase("exit")) {
             this.setVisible(true);
 
+        }else if (comando1.equalsIgnoreCase("show")){
+            System.out.println("Direccion Ip:"+computadoras.get(seleccionando).getDireccionIp()+"\n Mascara Red:"+computadoras.get(seleccionando).getMascaraDered());
         }
         ping = entrada.next();
 
@@ -291,6 +292,7 @@ public class Principal extends javax.swing.JFrame {
     public void recorriendo() {
         for (int i = 0; i < computadoras.size(); i++) {
             JOptionPane.showMessageDialog(null, computadoras.get(i).toString());
+            System.out.println(""+computadoras.get(i).toString());
 
         }
     }
